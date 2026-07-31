@@ -29,26 +29,28 @@ for the full problem framing and ML task definition.
 3. Preprocessing: median imputation + scaling (numeric), most-frequent imputation + one-hot
    encoding (categorical) — all inside a single `sklearn.Pipeline` to avoid leakage and keep
    training/inference preprocessing identical
-4. Models compared: naive baseline (majority class) → Logistic Regression (baseline model) →
-   Random Forest (main model)
-5. Final model selected based on validation F1 (churn class), then evaluated once on the frozen
-   test set
+4. Models compared: naive baseline (majority class) → Logistic Regression → Random Forest
+5. Final model selected based on validation F1 and ROC-AUC — Logistic Regression matched
+   Random Forest on F1 but had a higher ROC-AUC and simpler structure, so it was chosen as
+   the final model, then evaluated once on the frozen test set
 
 ## Models / approaches tested
 | Model | Notes |
 |---|---|
 | DummyClassifier | naive baseline |
-| Logistic Regression | simple model baseline, `class_weight=balanced` |
-| Random Forest | main model, compared against baseline |
-
+| Logistic Regression | **final model** — best ROC-AUC on validation, simple & interpretable |
+| Random Forest | alternative approach, comparable F1 but lower ROC-AUC |
 
 ## Final model & justification
-Random Forest was selected as the final model because it achieved competitive performance while maintaining a good balance between precision and recall for the churn class. On the unseen test set, the model achieved an F1-score of 0.62 for churn prediction and a ROC-AUC of 0.8406. These results make it suitable for identifying customers at risk of churn.
-
+Logistic Regression was selected as the final model. On the validation set it achieved 
+the same F1-score as Random Forest while obtaining a slightly higher ROC-AUC, so the 
+simpler and more interpretable model was chosen. On the frozen test set, it achieved an 
+F1-score of 0.62 for the churn class and a ROC-AUC of 0.842.
 ## Evaluation results
 - Test F1 (churn class): 0.62
-- Test ROC-AUC: 0.8406
-- Baseline comparison: DummyClassifier F1 = 0.00, Logistic Regression F1 = 0.63, Random Forest F1 = 0.62
+- Test ROC-AUC: 0.842
+- Baseline comparison: since Logistic Regression was already used as the baseline, the 
+  final model and baseline are the same model — see Section 12 for the justification.
 - See `demo.ipynb` Sections 13-14 for the confusion matrix and error analysis.
 
 ## Installation
