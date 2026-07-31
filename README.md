@@ -41,7 +41,6 @@ for the full problem framing and ML task definition.
 | Logistic Regression | simple model baseline, `class_weight=balanced` |
 | Random Forest | main model, compared against baseline |
 
-(Fill in your actual metric numbers here after running `demo.ipynb`.)
 
 ## Final model & justification
 Random Forest was selected as the final model because it achieved competitive performance while maintaining a good balance between precision and recall for the churn class. On the unseen test set, the model achieved an F1-score of 0.62 for churn prediction and a ROC-AUC of 0.8406. These results make it suitable for identifying customers at risk of churn.
