@@ -1,6 +1,6 @@
 # FIN-02 — Digital Banking Customer Churn Prediction
 
-**Student:** <your full name>
+**Student:** Xalimov Muhammadjon
 **Track:** Field-Based Scenario — FIN-02
 **Course:** AI/ML Fundamentals — Capstone Project
 
@@ -44,12 +44,12 @@ for the full problem framing and ML task definition.
 (Fill in your actual metric numbers here after running `demo.ipynb`.)
 
 ## Final model & justification
-<Fill in: which model won, on what metric, and why — 2-3 sentences>
+Random Forest was selected as the final model because it achieved competitive performance while maintaining a good balance between precision and recall for the churn class. On the unseen test set, the model achieved an F1-score of 0.62 for churn prediction and a ROC-AUC of 0.8406. These results make it suitable for identifying customers at risk of churn.
 
 ## Evaluation results
-- Test F1 (churn class): <value>
-- Test ROC-AUC: <value>
-- Baseline comparison: <value>
+- Test F1 (churn class): 0.62
+- Test ROC-AUC: 0.8406
+- Baseline comparison: DummyClassifier F1 = 0.00, Logistic Regression F1 = 0.63, Random Forest F1 = 0.62
 - See `demo.ipynb` Sections 13-14 for the confusion matrix and error analysis.
 
 ## Installation
