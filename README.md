@@ -112,17 +112,21 @@ See `TERMINAL_DEMO.md` for more options (interactive input, custom JSON input).
 ```
 .
 .
+.
 ├── README.md
-├── LICENSE
+├── PROJECT_BRIEF.md
+├── PROJECT_STATUS.md
 ├── requirements.txt
 ├── demo.ipynb
+├── TERMINAL_DEMO.md
+├── .gitignore
+├── src/
+│   ├── train.py
+│   └── predict_cli.py
 ├── data/
+│   ├── README.md
+│   └── Telco-Customer-Churn.csv
 ├── docs/
-│   ├── PROJECT_STATUS.md
-│   └── TERMINAL_DEMO.md
-└── src/
-    ├── preprocessing.py
-    ├── train.py
-    ├── evaluation.py
-    ├── predict_cli.py
-    └── app.py
+│   └── data_audit.md
+└── models/
+    └── churn_model.joblib
