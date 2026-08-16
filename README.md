@@ -111,18 +111,18 @@ See `TERMINAL_DEMO.md` for more options (interactive input, custom JSON input).
 ## Repository structure
 ```
 .
+.
 ├── README.md
-├── PROJECT_STATUS.md
+├── LICENSE
 ├── requirements.txt
 ├── demo.ipynb
-├── train.py
-├── predict_cli.py
-├── TERMINAL_DEMO.md
 ├── data/
-│   ├── README.md
-│   └── Telco-Customer-Churn.csv   (committed copy; notebook also works without it)
 ├── docs/
-│   └── data_audit.md              (Data Gate evidence)
-└── models/
-    └── churn_model.joblib   (generated after running the notebook)
-```
+│   ├── PROJECT_STATUS.md
+│   └── TERMINAL_DEMO.md
+└── src/
+    ├── preprocessing.py
+    ├── train.py
+    ├── evaluation.py
+    ├── predict_cli.py
+    └── app.py
